@@ -103,7 +103,7 @@ const makeCarousel = (constructors) => {
     includePrevNextButton();
 }
 const getImages = async () => {
-    const queryString = `http://ergast.com/api/f1/current/constructors.json`;
+    const queryString = `https://ergast.com/api/f1/current/constructors.json`;
     const data = await axios.get(queryString);
     console.log(data);
     const constructors = data.data.MRData.ConstructorTable.Constructors;
