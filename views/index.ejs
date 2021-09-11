@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 World</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger fixed-top">
+        <div class="container-fluid ">
+            <img src="F1.svg.png" id="f1img" alt="">
+            <a class="navbar-brand   " href="">F1 Home</a>
+            <button class="navbar-toggler   " type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarContent">
+                <ul class="navbar-nav ">
+
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="about/about.html">About</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="constructors/index.html">Constructors</a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="searchForm">
+                    <input class="form-control me-2 inputData" type="search" id="searchInput" type="number" name="year"
+                        placeholder="Choose a search type" required aria-label="Search">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle ms-1 me-2" type="button"
+                            id="searchTypeDropDownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                            Search Type
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="searchTypeDropDownMenu">
+                            <li>
+                                <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
+                                        id="byYear" checked>
+                                    <label class="form-check-label" for="byYear">By F1 Season</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
+                                        id="byGP">
+                                    <label class="form-check-label" for="byGP">By GrandPrix</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
+                                        id="byDriverAndYear">
+                                    <label class="form-check-label" for="byDriverAndYear">By Driver,Year</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn btn-outline-success text-light " id="searchButton" type="submit">Search</button>
+                </form>
+            </div>
+
+        </div>
+    </nav>
+    <section class="container-fluid introWelcome" id="introWelcome">
+        <h1>
+            Welcome to F1. Please enter your search query!
+        </h1>
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
