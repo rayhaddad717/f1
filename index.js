@@ -1,10 +1,13 @@
 const express = require('express');
 const app = express();
 const ejs = require('ejs');
+const ejsMate = require('ejs-mate')
+const path = require('path');
+app.engine('ejs', ejsMate)
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
     res.render('index');

@@ -3,6 +3,14 @@
     padding:0.7em;
     margin-right:0.5em;
 }
+#videoContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel-item{
+    margin-left:30%;
+}
 form{
     margin-left:auto;
 }
@@ -50,5 +58,10 @@ tbody{
     }
     .willHide{
         display:none;
+    }
+}
+@media(max-width:500px){
+    .carousel-item{
+        margin-left:10%;
     }
 }
