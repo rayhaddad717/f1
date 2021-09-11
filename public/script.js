@@ -84,7 +84,6 @@ const fillDrivers = (drivers) => {
 const searchByYear = async (searchQuery) => {
     clearTableFromBody();
     try {
-        alert('entered');
         const q = `https://ergast.com/api/f1/${parseInt(searchQuery)}/driverStandings.json`;
         const standings = await axios.get(q);
         createDriverTable();
