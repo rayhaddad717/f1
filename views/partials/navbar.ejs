@@ -18,7 +18,47 @@
                 <li class="nav-item ">
                     <a class="nav-link" href="/constructors">Constructors</a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/login">login</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/signup">signup</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/logout">logout</a>
+                </li>
             </ul>
+            <form class="d-flex" id="searchForm">
+                <input class="form-control me-2 inputData" type="search" id="searchInput" type="number" name="year"
+                    placeholder="Choose a search type" required aria-label="Search">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle ms-1 me-2" type="button"
+                        id="searchTypeDropDownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                        Search Type
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="searchTypeDropDownMenu">
+                        <li>
+                            <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
+                                    id="byYear" checked>
+                                <label class="form-check-label" for="byYear">By F1 Season</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
+                                    id="byGP">
+                                <label class="form-check-label" for="byGP">By GrandPrix</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check"> <input class="form-check-input" type="radio" name="searchType"
+                                    id="byDriverAndYear">
+                                <label class="form-check-label" for="byDriverAndYear">By Driver,Year</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="btn btn-outline-success text-light " id="searchButton" type="submit">Search</button>
+            </form>
         </div>
 
     </div>

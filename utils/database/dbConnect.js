@@ -1,22 +1,12 @@
-const mssql = require('mssql');
-let { sqlLogin, sqlPassword } = process.env;
-sqlLogin = sqlLogin ? sqlLogin : process.argv[2];
-sqlPassword = sqlPassword ? sqlPassword : process.argv[3];
-const config = {
-    user: sqlLogin,
-    password: sqlPassword,
-    server: 'coastBusters.mssql.somee.com',
-    database: 'coastBusters',
-    options: {
-        trustServerCertificate: true
-    }
+const username = process.env.mongoUsername ? process.env.mongoUsername : process.argv[2];
+const password = process.env.mongoPassword ? process.env.mongoPassword : process.argv[3];
+console.log(username, password)
+const mongoose = require('mongoose');
+module.exports = () => {
+    mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.ugkjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
+    const db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error'));
+    db.once('open', () => {
+        console.log('Database connected')
+    })
 }
-const connectToDB = async () => {
-    try {
-        await mssql.connect(config);
-        console.log('connected to db')
-    } catch (e) {
-        console.log(e);
-    }
-}
-module.exports = connectToDB;

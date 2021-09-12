@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate') %>
+    <%- include('../partials/navbar') %>
+        <form action="/signup" method="POST">
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="username" autocomplete="false">
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="password" autocomplete="false">
+
+            <label for="firstName"></label>
+            <input type="text" id="firstName" name="firstName" placeholder="firstName" autocomplete="false">
+
+            <label for="lastName"></label>
+            <input type="text" id="lastName" name="lastName" placeholder="lastName" autocomplete="false">
+
+            <label for="dateOfBirth"></label>
+            <input type="text" id="dateOfBirth" name="dateOfBirth" placeholder="dateOfBirth" autocomplete="false">
+
+            <label for="country"></label>
+            <input type="text" id="country" name="country" placeholder="country" autocomplete="false">
+
+            <button>SIGNUP</button>
+        </form>
