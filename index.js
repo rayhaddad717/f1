@@ -3,6 +3,7 @@ const app = express();
 const ejs = require('ejs');
 const ejsMate = require('ejs-mate')
 const path = require('path');
+const connectToDB = require('./utils/database/dbConnect');
 app.engine('ejs', ejsMate)
 
 app.set('view engine', 'ejs');
@@ -21,8 +22,5 @@ app.get('/constructors', (req, res) => {
 const port = process.env.PORT ? process.env.PORT : 3000;
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
-    console.log("------------------------------- ENV----------------");
-    console.log(process.env.sqlLogin);
-    console.log(process.env.sqlPassword);
-    console.log("------------------------------- ENV----------------");
+    connectToDB();
 })
