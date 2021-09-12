@@ -21,4 +21,7 @@ app.get('/constructors', (req, res) => {
 const port = process.env.PORT ? process.env.PORT : 3000;
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
+    console.log("------------------------------- ENV----------------");
+    console.log(process.env.test);
+    console.log("------------------------------- ENV----------------");
 })
