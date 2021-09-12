@@ -22,6 +22,7 @@ const port = process.env.PORT ? process.env.PORT : 3000;
 app.listen(port, () => {
     console.log(`listening on port ${port}`)
     console.log("------------------------------- ENV----------------");
-    console.log(process.env.test);
+    console.log(process.env.sqlLogin);
+    console.log(process.env.sqlPassword);
     console.log("------------------------------- ENV----------------");
 })
