@@ -20,11 +20,22 @@ app.use('/login', loginRoutes);
 const signupRoutes = require('./routes/signup')
 app.use('/signup', signupRoutes);
 
+app.use((req, res, next) => {
+    if (!req.session.loginID) {
+        res.redirect('/login');
+    } else {
+        next();
+    }
+})
 app.get('/', async (req, res) => {
-    if (req.session.loginID) {
-        const user = await Login.findById(req.session.loginID).populate('user');
+    if (!req.session.loginID) {
+        // const user = await Login.findById(req.session.loginID).populate('user');
     }
     res.render('index');
+
+})
+app.get('/forum', (req, res) => {
+    res.render('test/forum')
 })
 app.get('/about', (req, res) => {
     res.render('about')
@@ -38,6 +49,9 @@ app.get('/logout', (req, res, next) => {
     res.redirect('/');
 })
 
+app.get('/standings', (req, res) => {
+    res.render('standings')
+})
 const port = process.env.PORT ? process.env.PORT : 3000;
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
