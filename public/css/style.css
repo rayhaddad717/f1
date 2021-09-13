@@ -1,7 +1,11 @@
 #f1img{
-    background-color: rgba(255,255,255,0.7);
     padding:0.7em;
     margin-right:0.5em;
+}
+.image-container{
+    background-color: rgba(255,255,255,1);
+    border:1px solid white;
+    border-radius:50%;
 }
 #videoContainer{
     display:flex;

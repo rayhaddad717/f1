@@ -5,7 +5,7 @@ const passwordFunctions = require('../utils/passwordFunctions');
 
 const checkIfLoggedIn = (req, res, next) => {
     if (req.session.loginID) {
-        console.log('already logged in');
+        req.flash('message', 'already logged in!');
         res.redirect('/');
     } else {
         next();
