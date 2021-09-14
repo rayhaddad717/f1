@@ -3,10 +3,17 @@
         <h1>Welcome to the forums page!</h1>
         <div class="container d-flex flex-columns">
         </div>
+        <span id="username" hidden>
+            <%=user.username %>
+        </span>
+
         <form class="form">
             <ul class="posts row">
-
-
+                <% for(message of messages) {%>
+                    <li>
+                        <%=message.message %> - <%= message.user.username %>
+                    </li>
+                    <% } %>
             </ul>
 
             <label for="message form-label"></label>

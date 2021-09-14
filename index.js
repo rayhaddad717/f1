@@ -7,6 +7,8 @@ const connectToDB = require('./utils/database/dbConnect');
 const session = require('express-session');
 connectToDB();
 const Login = require('./models/Logins');
+const Message = require('./models/Messages')
+
 const flash = require('connect-flash');
 app.engine('ejs', ejsMate)
 
@@ -47,9 +49,10 @@ app.get('/', async (req, res) => {
     res.render('index');
 
 })
-app.get('/forum', (req, res) => {
-    req.flash('message', 'this form is currently under construction: the messages you enter will not be saved. However you are still welcome to try it.')
-    res.render('test/forum')
+app.get('/forum', async (req, res) => {
+    const user = await Login.findById(req.session.loginID).populate('user');
+    const messages = await Message.find().populate('user');
+    res.render('test/forum', { user, messages })
 })
 app.get('/about', (req, res) => {
     res.render('about')

@@ -6,9 +6,9 @@ const messageModel = new mongoose.Schema({
         required: true
     },
 
-    loginID: {
-        type: String,
-        required: true
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Login'
     }
 })
 module.exports = mongoose.model('Message', messageModel);

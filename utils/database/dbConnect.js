@@ -1,6 +1,6 @@
 const username = process.env.mongoUsername ? process.env.mongoUsername : process.argv[2];
 const password = process.env.mongoPassword ? process.env.mongoPassword : process.argv[3];
-console.log(username, password)
+console.log(username, password);
 const mongoose = require('mongoose');
 module.exports = () => {
     mongoose.connect(`mongodb+srv://${username}:${password}@cluster0.ugkjk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`);
