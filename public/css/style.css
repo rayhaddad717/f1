@@ -19,13 +19,11 @@ form{
     margin-left:auto;
 }
 .driverTable, .driverTableDriver, .driverTableDriverResults{
-    border:2px solid blue;
     width:100%;
     margin-top:4em;
     padding:0.5em;
 }
 .raceTable{
-    border:2px solid blue;
     width:100%;
     margin-top:4em;
     padding:0.5em;
@@ -67,5 +65,9 @@ tbody{
 @media(max-width:500px){
     .carousel-item{
         margin-left:10%;
+    }
+    .driverTableContainer{
+        overflow-x: scroll;
+        width:50%;
     }
 }

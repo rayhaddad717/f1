@@ -14,6 +14,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
 app.use(session({ secret: 'mysecret', resave: false, saveUninitialized: false }));
 app.use(flash());
 
@@ -36,6 +37,9 @@ app.use((req, res, next) => {
         next();
     }
 })
+const forumRoutes = require('./routes/forum')
+app.use('/testing', forumRoutes);
+
 app.get('/', async (req, res) => {
     if (!req.session.loginID) {
         // const user = await Login.findById(req.session.loginID).populate('user');
@@ -44,6 +48,7 @@ app.get('/', async (req, res) => {
 
 })
 app.get('/forum', (req, res) => {
+    req.flash('message', 'this form is currently under construction: the messages you enter will not be saved. However you are still welcome to try it.')
     res.render('test/forum')
 })
 app.get('/about', (req, res) => {

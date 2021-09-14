@@ -19,6 +19,7 @@ const createDriverTable = () => {
     const driverTable = document.createElement('table');
     driverTable.id = 'driverTable';
     driverTable.classList.add('driverTable');
+    driverTable.classList.add('table');
 
     const tHead = document.createElement('thead');
     tHead.classList.add('row');
@@ -138,6 +139,7 @@ const createDriverRaceResultTable = (race) => {
     const raceTable = document.createElement('table');
     raceTable.classList.add('raceTable');
     raceTable.classList.add('driverRaceResultsContainer');
+    raceTable.classList.add('table');
 
     //Create my table Header
     //Create my Race Name Header
@@ -176,10 +178,14 @@ const createDriverRaceResultTable = (race) => {
 }
 const createDriverInfoTable = info => {
 
+    const tableContainer = document.createElement('div');
+    tableContainer.classList.add('driverTableContainer');
+    tableContainer.classList.add('container');
     const driverInfoTable = document.createElement('table');
     driverInfoTable.classList.add('raceTable');
     driverInfoTable.classList.add('container-fluid');
     driverInfoTable.classList.add('driverRaceResultsContainer');
+    driverInfoTable.classList.add('table');
 
     const tHead = document.createElement('thead');
     // tHead.classList.add('row');
@@ -209,7 +215,8 @@ const createDriverInfoTable = info => {
     tBody.appendChild(driverInfoRow);
     driverInfoTable.appendChild(tHead);
     driverInfoTable.appendChild(tBody);
-    document.body.appendChild(driverInfoTable);
+    tableContainer.body.appendChild(driverInfoTable);
+    document.body.appendChild(tableContainer);
 
 }
 
