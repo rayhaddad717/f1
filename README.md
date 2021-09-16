@@ -1,2 +1,2 @@
 # f1
-F1 search
+Full stack f1 fan website (under construction)
